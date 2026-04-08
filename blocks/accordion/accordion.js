@@ -15,7 +15,6 @@ function decorateAccordion(el) {
 }
 
 const els = document.querySelectorAll('.accordion');
-console.log(els)
 els.forEach((el) => {
   decorateAccordion(el);
 });
