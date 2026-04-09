@@ -1,14 +1,29 @@
 module.exports = {
   root: true,
-  extends: 'airbnb-base',
   env: {
     browser: true,
+    es2021: true,
   },
+  extends: [
+    'airbnb-base',
+    'eslint:recommended',
+    'plugin:react/recommended',
+  ],
   parser: '@babel/eslint-parser',
   parserOptions: {
     allowImportExportEverywhere: true,
     sourceType: 'module',
     requireConfigFile: false,
+    ecmaVersion: 'latest',
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
+  plugins: ['react'],
+  settings: {
+    react: {
+      version: 'detect', // React version. "
+    },
   },
   rules: {
     'import/extensions': ['error', { js: 'always' }], // require js file extensions in imports
