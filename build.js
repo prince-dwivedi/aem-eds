@@ -1,9 +1,16 @@
 // const esbuild = require('esbuild');
 import esbuild from 'esbuild';
 
+// esbuild.build({
+//   entryPoints: ['./blocks/button//button.src.jsx'],
+//   bundle: true,
+//   outfile: './blocks/button/button.bundle.js',
+//   format: 'esm',
+// }).catch(() => process.exit(1));
+
 esbuild.build({
-  entryPoints: ['./blocks/button//button.src.jsx'],
+  entryPoints: ['./blocks/accordion//accordion.src.jsx'],
   bundle: true,
-  outfile: './blocks/button/button.bundle.js',
+  outfile: './blocks/accordion/accordion.bundle.js',
   format: 'esm',
 }).catch(() => process.exit(1));

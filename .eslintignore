@@ -1,4 +1,4 @@
 helix-importer-ui
 *.min.js
-blocks/**/button.js
+blocks/**/*.js
 blocks/**/*.bundle.js
