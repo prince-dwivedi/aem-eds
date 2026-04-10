@@ -1,18 +1,22 @@
 export default function decorate(block) {
   const rows = [...block.children];
 
-  const logoRow = rows[0];
-  const navRows = rows.slice(1);
+  // First row → logo
+  const logoUrl = rows[0].children[0].textContent.trim();
 
-  const logo = logoRow.children[0].textContent;
-  const navItems = navRows.map(row => row.children[1]?.textContent);
+  // Rest rows → nav links
+  const navItems = rows.slice(1).map(row => {
+    return row.children[1]?.textContent.trim();
+  }).filter(Boolean);
 
   block.innerHTML = `
-    <div class="header-container">
-      <img src="${logo}" class="logo" />
-      <nav>
+    <div class="header-wrapper">
+      <div class="logo-container">
+        <img src="${logoUrl}" alt="logo" />
+      </div>
+      <div class="nav-container">
         ${navItems.map(item => `<a href="#">${item}</a>`).join('')}
-      </nav>
+      </div>
     </div>
   `;
 }
