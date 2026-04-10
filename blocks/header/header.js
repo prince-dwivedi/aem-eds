@@ -21460,6 +21460,7 @@ function Header({ logo, links }) {
 
 // blocks/header/header.src.jsx
 function decorate(block) {
+  console.log(block, "block");
   const rows = [...block.children];
   console.log(rows, "rows");
   const logo = rows[0].children[0].textContent.trim();

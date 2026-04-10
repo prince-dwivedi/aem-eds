@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import Header from './Header.jsx';
 
 export default function decorate(block) {
+    console.log(block,"block");
   const rows = [...block.children];
     console.log(rows,"rows");
 
