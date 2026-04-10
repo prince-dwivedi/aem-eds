@@ -592,10 +592,14 @@ function decorateBlocks(main) {
  * @returns {Promise}
  */
 async function loadHeader(header) {
-  const headerBlock = buildBlock('header', '');
-  header.append(headerBlock);
-  decorateBlock(headerBlock);
-  return loadBlock(headerBlock);
+  // const headerBlock = buildBlock('header', '');
+  // header.append(headerBlock);
+  // decorateBlock(headerBlock);
+  // return loadBlock(headerBlock);
+  const resp = await fetch('/header.plain.html');
+  if (resp.ok) {
+    header.innerHTML = await resp.text();
+  }
 }
 
 /**
